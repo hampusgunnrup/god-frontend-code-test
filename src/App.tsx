@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// @ts-ignore: No declaration file error
 import { View } from 'vcc-ui';
 
 import { Car } from './types/car';
 import { getCars } from './api/car';
+import CarList from './components/CarList/CarList';
 
 function App() {
   const [ cars, setCars ] = useState<Car[]>([]);
