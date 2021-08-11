@@ -16,7 +16,7 @@ function App() {
 
   return (
     <View>
-      { JSON.stringify(cars) }
+      <CarList cars={cars}></CarList>
     </View>
   );
 }
