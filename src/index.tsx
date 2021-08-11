@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// @ts-ignore: No declaration file error
+import { StyleProvider, ThemePicker } from 'vcc-ui';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StyleProvider>
+      <ThemePicker variant="light">
+        <App />
+      </ThemePicker>
+    </StyleProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
