@@ -4,6 +4,7 @@ import { StyleProvider, ThemePicker } from 'vcc-ui';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
