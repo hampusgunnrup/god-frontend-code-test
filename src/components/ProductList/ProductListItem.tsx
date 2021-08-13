@@ -29,18 +29,29 @@ function ProductListItem(props: ProductListItemProps) {
         >
           {product.type}
         </Text>
-        <Text
-          variant="hillary"
-          subStyle="emphasis"
-        >
-          {product.name}
-        </Text>
-        <Text
-          variant="hillary"
-          foreground={theme.color.foreground.secondary}
-        >
-          {product.subType}
-        </Text>
+        <Flex extend={{ 
+          [theme.breakpoints.fromXL]: {
+            flexDirection: 'row',
+          }
+        }}>
+          <Text
+            variant="hillary"
+            subStyle="emphasis"
+          >
+            {product.name}
+          </Text>
+          <Text
+            variant="hillary"
+            foreground={theme.color.foreground.secondary}
+            extend={{
+              [theme.breakpoints.fromXL]: {
+                marginLeft: '0.3rem',
+              }
+            }}
+          >
+            {product.subType}
+          </Text>
+        </Flex>
         <img src={product.imageUrl} alt={product.name} />
         <Spacer />
         <Flex extend={{ flexDirection: 'row', justifyContent: 'center' }}>
