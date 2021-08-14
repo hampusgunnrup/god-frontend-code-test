@@ -15,6 +15,7 @@ function ListPositionIndicator(props: ListPositionIndicatorProps) {
     const isCurrent = currentPosition === i + 1;
     const dot = (
       <Click
+        key={`dot-${i}`}
         extend={{
           height: '0.7rem',
           width: '0.7rem',

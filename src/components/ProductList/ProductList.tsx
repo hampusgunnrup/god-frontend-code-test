@@ -59,17 +59,20 @@ function ProductList(props: ProductListProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const listItems = products.map(product => (
-    <Flex extend={{
-      width: '75%', 
-      padding: '10px', 
-      scrollSnapAlign: 'start',
-      [theme.breakpoints.fromXL]: {
-        width: 'calc(25% - 20px)',
-        transform: `translateX(${-(listPosition - 1) * listTranslateFactor}px)`,
-        transition: 'all 1s ease',
-      },
-    }}>
+  const listItems = products.map((product: Product) => (
+    <Flex
+      extend={{
+        width: '75%', 
+        padding: '10px', 
+        scrollSnapAlign: 'start',
+        [theme.breakpoints.fromXL]: {
+          width: 'calc(25% - 20px)',
+          transform: `translateX(${-(listPosition - 1) * listTranslateFactor}px)`,
+          transition: 'all 1s ease',
+        },
+      }}
+      key={product.id}
+    >
       <ProductListItem product={product} />
     </Flex>
   ));
